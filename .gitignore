@@ -34,3 +34,8 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+.aidesigner/*
+!.aidesigner/.gitkeep
+.agents/
+.claude/
+.mcp.json
