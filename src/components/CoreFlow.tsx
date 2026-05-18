@@ -1,98 +1,92 @@
 const steps = [
   {
-    icon: (
-      <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-      </svg>
-    ),
     step: "01",
     title: "영상을 올린다",
     description: "클라이밍 영상을 Limbing에 업로드하세요.",
+    preview: (
+      <div className="bg-surface rounded-2xl border border-line p-4 flex items-center gap-3 w-fit shadow-panel">
+        <div className="w-10 h-10 rounded-xl bg-climb-green/15 flex items-center justify-center text-climb-green">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" />
+          </svg>
+        </div>
+        <div>
+          <p className="font-semibold text-sm">영상 업로드</p>
+          <p className="text-xs text-muted">갤러리에서 바로 올리기</p>
+        </div>
+      </div>
+    ),
   },
   {
-    icon: (
-      <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-      </svg>
-    ),
     step: "02",
     title: "암장, 난이도, 문제를 태깅한다",
     description: "어디서, 어떤 난이도의, 몇 번 문제인지 태그를 달아요.",
+    preview: (
+      <div className="bg-surface rounded-2xl border border-line p-4 shadow-panel">
+        <div className="flex gap-2 flex-wrap max-w-[200px]">
+          <span className="bg-climb-green/15 text-climb-green border border-climb-green/30 text-xs px-3 py-1.5 rounded-full font-semibold">완등</span>
+          <span className="bg-bg text-muted text-xs px-3 py-1.5 rounded-full border border-line">#다이노</span>
+          <span className="bg-bg text-muted text-xs px-3 py-1.5 rounded-full border border-line">#슬로퍼</span>
+          <span className="bg-climb-lime/30 text-climb-green text-xs font-bold px-3 py-1.5 rounded-full border border-climb-lime/40">V5</span>
+        </div>
+      </div>
+    ),
   },
   {
-    icon: (
-      <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
-      </svg>
-    ),
     step: "03",
     title: "같은 문제 영상을 모아본다",
     description: "같은 문제를 푼 다른 사람들의 풀이를 한눈에 확인해요.",
+    preview: (
+      <div className="bg-surface rounded-2xl border border-line p-3 shadow-panel inline-flex gap-2">
+        <button className="bg-bg text-ink px-4 py-2 rounded-full text-sm flex items-center gap-2 border border-line">
+          🔥 <span className="text-climb-green font-bold">NICE!</span>
+        </button>
+        <button className="bg-bg text-muted w-10 h-10 flex items-center justify-center rounded-full text-sm border border-line">
+          💀
+        </button>
+      </div>
+    ),
   },
 ];
 
 export function CoreFlow() {
   return (
-    <section className="flex min-h-svh snap-start flex-col items-center justify-center px-5 py-16">
-      <div className="mx-auto w-full max-w-5xl">
-        <div className="mb-12 text-center">
-          <p className="text-climb-green mb-3 text-sm font-semibold uppercase tracking-wider">
+    <section id="how-it-works" className="snap-start min-h-[calc(100svh-4rem)] flex flex-col justify-center py-16 px-5">
+      <div className="mx-auto w-full max-w-4xl">
+        <div className="text-center mb-10">
+          <p className="text-climb-green mb-2 text-xs font-bold uppercase tracking-wider">
             How it works
           </p>
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+          <h2 className="text-2xl font-bold tracking-tight md:text-4xl">
             Limbing은 이렇게 작동해요
           </h2>
         </div>
 
         <div className="relative">
-          {/* Connection Line */}
-          <div className="bg-line absolute top-24 right-0 left-0 hidden h-0.5 md:block" />
+          {/* Vertical Line */}
+          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-line to-transparent -translate-x-1/2" />
 
-          <div className="grid gap-8 md:grid-cols-3">
-            {steps.map((item, index) => (
-              <div key={index} className="relative flex flex-col items-center text-center">
-                {/* Step Circle */}
-                <div className="shadow-soft bg-surface relative z-10 mb-6 flex h-20 w-20 flex-col items-center justify-center rounded-full border-2 border-climb-green">
-                  <div className="text-climb-green">{item.icon}</div>
-                </div>
-
-                {/* Step Number */}
-                <span className="text-climb-lime mb-2 text-sm font-bold">
-                  {item.step}
-                </span>
-
-                {/* Content */}
-                <h3 className="mb-2 text-xl font-semibold">{item.title}</h3>
-                <p className="text-muted max-w-xs leading-relaxed">
-                  {item.description}
-                </p>
+          {steps.map((item, index) => (
+            <div
+              key={index}
+              className={`relative flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} items-center justify-between gap-6 ${index < steps.length - 1 ? "mb-10" : ""}`}
+            >
+              {/* Content Side */}
+              <div className={`w-full md:w-5/12 pl-16 ${index % 2 === 0 ? "md:pl-0 md:text-right md:pr-10" : "md:pr-0 md:pl-10"}`}>
+                <span className="text-climb-lime font-black text-sm mb-2 block">{item.step}</span>
+                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                <p className="text-muted leading-relaxed">{item.description}</p>
               </div>
-            ))}
-          </div>
-        </div>
 
-        {/* Visual Demo */}
-        <div className="shadow-soft bg-surface mt-16 overflow-hidden rounded-2xl border border-line">
-          <div className="flex items-center gap-2 border-b border-line bg-bg px-4 py-3">
-            <div className="h-3 w-3 rounded-full bg-climb-red" />
-            <div className="h-3 w-3 rounded-full bg-climb-lime" />
-            <div className="h-3 w-3 rounded-full bg-climb-green" />
-            <span className="text-muted ml-4 text-sm">더클라임 강남 - 초록 5번 문제</span>
-          </div>
-          <div className="grid gap-4 p-6 md:grid-cols-4">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="group cursor-pointer">
-                <div className="bg-bg mb-3 aspect-[9/16] overflow-hidden rounded-xl border border-line transition-transform group-hover:scale-105">
-                  <div className="flex h-full flex-col items-center justify-center gap-2">
-                    <div className="h-8 w-8 rounded-full bg-climb-green/20" />
-                    <span className="text-muted text-xs">@climber_{i}</span>
-                  </div>
-                </div>
-                <p className="text-sm font-medium">클라이머_{i}</p>
-                <p className="text-muted text-xs">2일 전</p>
+              {/* Center Dot */}
+              <div className="absolute left-6 md:left-1/2 w-3.5 h-3.5 bg-bg border-2 border-climb-green rounded-full -translate-x-1/2 z-10 shadow-[0_0_8px_rgba(36,94,69,0.5)]" />
+
+              {/* Preview Side */}
+              <div className={`w-full md:w-5/12 pl-16 ${index % 2 === 0 ? "md:pl-10" : "md:pr-10 flex md:justify-end"}`}>
+                {item.preview}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
