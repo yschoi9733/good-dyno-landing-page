@@ -1,20 +1,30 @@
-import { Upload, Tag, Users } from "lucide-react";
-
 const steps = [
   {
-    icon: Upload,
+    icon: (
+      <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+      </svg>
+    ),
     step: "01",
     title: "영상을 올린다",
     description: "클라이밍 영상을 Limbing에 업로드하세요.",
   },
   {
-    icon: Tag,
+    icon: (
+      <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+      </svg>
+    ),
     step: "02",
     title: "암장, 난이도, 문제를 태깅한다",
     description: "어디서, 어떤 난이도의, 몇 번 문제인지 태그를 달아요.",
   },
   {
-    icon: Users,
+    icon: (
+      <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+      </svg>
+    ),
     step: "03",
     title: "같은 문제 영상을 모아본다",
     description: "같은 문제를 푼 다른 사람들의 풀이를 한눈에 확인해요.",
@@ -43,7 +53,7 @@ export function CoreFlow() {
               <div key={index} className="relative flex flex-col items-center text-center">
                 {/* Step Circle */}
                 <div className="shadow-soft bg-surface relative z-10 mb-6 flex h-20 w-20 flex-col items-center justify-center rounded-full border-2 border-climb-green">
-                  <item.icon className="text-climb-green h-8 w-8" />
+                  <div className="text-climb-green">{item.icon}</div>
                 </div>
 
                 {/* Step Number */}

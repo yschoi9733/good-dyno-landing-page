@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { ArrowRight, CheckCircle } from "lucide-react";
 
 export function FinalCTA() {
   const [email, setEmail] = useState("");
@@ -48,7 +47,9 @@ export function FinalCTA() {
 
         {isSubmitted ? (
           <div className="bg-surface shadow-panel inline-flex items-center gap-3 rounded-2xl border border-climb-green/30 px-8 py-6">
-            <CheckCircle className="text-climb-green h-8 w-8" />
+            <svg className="text-climb-green h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
             <div className="text-left">
               <p className="font-semibold">신청이 완료되었어요!</p>
               <p className="text-muted text-sm">출시되면 가장 먼저 연락드릴게요.</p>
@@ -70,7 +71,9 @@ export function FinalCTA() {
                 className="bg-climb-green hover:bg-climb-green/90 flex items-center justify-center gap-2 rounded-xl px-6 py-3 font-semibold text-white transition-colors"
               >
                 사전 신청
-                <ArrowRight className="h-4 w-4" />
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
               </button>
             </div>
             <p className="text-muted mt-4 text-sm">

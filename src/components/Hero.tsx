@@ -1,5 +1,3 @@
-import { ChevronDown } from "lucide-react";
-
 export function Hero() {
   return (
     <section className="flex min-h-svh snap-start flex-col items-center justify-center px-5 py-16">
@@ -46,7 +44,9 @@ export function Hero() {
           </button>
           <button className="text-muted hover:text-ink flex items-center gap-2 text-lg font-medium transition-colors">
             서비스 컨셉 보기
-            <ChevronDown className="h-5 w-5" />
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
           </button>
         </div>
 
