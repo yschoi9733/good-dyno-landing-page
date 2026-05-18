@@ -2,7 +2,7 @@ import { ArrowDown } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative snap-start min-h-[calc(100svh-4rem)] flex flex-col justify-center px-5 pt-24 pb-16 overflow-hidden">
+    <section className="relative min-h-[calc(100svh-4rem)] flex flex-col justify-center px-5 pt-24 pb-16 overflow-hidden">
       <div className="mx-auto flex w-full max-w-5xl flex-col lg:flex-row items-center gap-16">
 
         {/* Text Content */}
@@ -22,7 +22,7 @@ export function Hero() {
           </h1>
 
           <p className="text-muted max-w-md text-pretty text-lg leading-relaxed mb-10 mx-auto lg:mx-0">
-            흩어진 등반 영상을 암장, 난이도, 문제 기준으로 정리하고 내 성장 기록까지 확인하세요.
+            흩어진 클라이밍 영상을 암장, 난이도, 문제 기준으로 정리하고 내 성장 기록까지 확인하세요.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
@@ -64,7 +64,7 @@ export function Hero() {
             </div>
 
             {/* Feed */}
-            <div className="w-full h-full pt-[60px] pb-16 overflow-y-auto">
+            <div className="w-full h-full pt-[60px] pb-16 overflow-hidden">
               {/* Post 1 */}
               <div className="border-b border-line">
                 <div className="px-3 py-2.5 flex justify-between items-center">
@@ -83,7 +83,7 @@ export function Hero() {
                 </div>
                 <div className="relative aspect-[4/5] bg-bg">
                   <img
-                    src="https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=600&q=80"
+                    src="https://images.unsplash.com/photo-1564769662533-4f00a87b4056?auto=format&fit=crop&w=600&q=80"
                     alt="Climbing"
                     className="w-full h-full object-cover"
                   />
@@ -128,7 +128,7 @@ export function Hero() {
                 </div>
                 <div className="relative aspect-square bg-bg">
                   <img
-                    src="https://images.unsplash.com/photo-1564769662533-4f00a87b4056?auto=format&fit=crop&w=600&q=80"
+                    src="https://images.unsplash.com/photo-1675190558564-cc1ec83e9e0c?auto=format&fit=crop&w=600&q=80"
                     alt="Climbing"
                     className="w-full h-full object-cover"
                   />
