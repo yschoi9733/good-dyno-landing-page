@@ -23,7 +23,7 @@ const painPoints = [
 
 export function PainPoints() {
   return (
-    <section id="problems" className="snap-start min-h-[calc(100svh-4rem)] flex flex-col justify-center border-t border-line bg-surface/40 py-16 px-5">
+    <section id="problems" className="min-h-[calc(100svh-4rem)] flex flex-col justify-center border-t border-line bg-surface/40 py-16 px-5">
       <div className="mx-auto w-full max-w-5xl">
         <div className="flex flex-col md:flex-row gap-16 items-start">
 
@@ -33,10 +33,10 @@ export function PainPoints() {
               The Problem
             </p>
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl leading-tight mb-4">
-              아직도 인스타그램에<br />등반 영상을 올리시나요?
+              아직도 인스타그램에<br /><span className="text-climb-green">클라이밍 영상</span>을 올리시나요?
             </h2>
             <p className="text-muted leading-relaxed">
-              기존 SNS는 등반에 특화되어 있지 않습니다. 수많은 루트 비디오가 흩어지고, 내 실력을 체계적으로 확인하기 어렵죠.
+              기존 SNS는 클라이밍에 특화되어 있지 않습니다. 수많은 루트 비디오가 흩어지고, 내 실력을 체계적으로 확인하기 어렵죠.
             </p>
           </div>
 
