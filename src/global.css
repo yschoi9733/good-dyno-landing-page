@@ -1,0 +1,68 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'SUIT';
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.woff2')
+    format('woff2-variations');
+}
+
+@theme {
+  --color-bg: #f7f5ee;
+  --color-surface: #fffaf1;
+  --color-ink: #171512;
+  --color-muted: #6d675e;
+  --color-line: #ded6c8;
+  --color-climb-green: #245e45;
+  --color-climb-lime: #cbe55c;
+  --color-climb-red: #ef5d48;
+  --color-climb-blue: #3b82c4;
+  --shadow-soft: 0 18px 70px rgba(43, 35, 24, 0.14);
+  --shadow-panel: 0 12px 42px rgba(43, 35, 24, 0.08);
+  --font-sans:
+    'SUIT', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+}
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply overflow-x-hidden scroll-smooth;
+  }
+
+  body {
+    @apply bg-bg text-ink m-0 min-w-80 overflow-x-hidden font-sans leading-normal antialiased;
+    background-image:
+      linear-gradient(90deg, rgba(36, 94, 69, 0.08) 1px, transparent 1px),
+      linear-gradient(180deg, rgba(36, 94, 69, 0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  button {
+    @apply cursor-pointer font-[inherit];
+  }
+
+  input {
+    @apply font-[inherit];
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  a {
+    @apply text-inherit;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    @apply m-0;
+  }
+}
