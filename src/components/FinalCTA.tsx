@@ -16,12 +16,7 @@ export function FinalCTA() {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ email }),
       });
-      if (res.ok) {
-        setIsSubmitted(true);
-        const main = document.querySelector("main");
-        if (main) main.scrollTo({ top: 0, behavior: "smooth" });
-        else window.scrollTo({ top: 0, behavior: "smooth" });
-      }
+      if (res.ok) setIsSubmitted(true);
     } finally {
       setIsLoading(false);
     }
