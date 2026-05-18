@@ -57,9 +57,14 @@ export function SocialProof() {
           </div>
 
           <div className="border-t border-line p-6 text-center md:p-8">
-            <button className="bg-climb-green hover:bg-climb-green/90 rounded-full px-8 py-3 font-semibold text-white transition-colors">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfhmF8J0a2n8Oo5UdUndkORE5u9cWKR8FGrW9S-01ks6hH_Pw/viewform?usp=dialog"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-climb-green hover:bg-climb-green/90 inline-block rounded-full px-8 py-3 font-semibold text-white transition-colors"
+            >
               설문 참여하기
-            </button>
+            </a>
             <p className="text-muted mt-3 text-sm">약 3분 정도 소요됩니다</p>
           </div>
         </div>
