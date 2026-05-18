@@ -4,11 +4,26 @@ import { CheckCircle, ArrowRight } from "lucide-react";
 export function FinalCTA() {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setIsSubmitted(true);
+    if (!email) return;
+    setIsLoading(true);
+    try {
+      const res = await fetch("https://formspree.io/f/mlgveqkl", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (res.ok) {
+        setIsSubmitted(true);
+        const main = document.querySelector("main");
+        if (main) main.scrollTo({ top: 0, behavior: "smooth" });
+        else window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -66,10 +81,11 @@ export function FinalCTA() {
                   />
                   <button
                     type="submit"
-                    className="bg-climb-green hover:bg-climb-green/90 flex items-center justify-center gap-2 rounded-xl px-6 py-3 font-semibold text-white transition-colors"
+                    disabled={isLoading}
+                    className="bg-climb-green hover:bg-climb-green/90 disabled:opacity-60 flex items-center justify-center gap-2 rounded-xl px-6 py-3 font-semibold text-white transition-colors"
                   >
-                    사전 신청
-                    <ArrowRight className="h-4 w-4" />
+                    {isLoading ? "신청 중..." : "사전 신청"}
+                    {!isLoading && <ArrowRight className="h-4 w-4" />}
                   </button>
                 </div>
                 <p className="text-muted mt-4 text-sm">
