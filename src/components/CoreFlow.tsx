@@ -51,7 +51,7 @@ const steps = [
 
 export function CoreFlow() {
   return (
-    <section id="how-it-works" className="snap-start min-h-[calc(100svh-4rem)] flex flex-col justify-center py-16 px-5">
+    <section id="how-it-works" className="min-h-[calc(100svh-4rem)] flex flex-col justify-center py-16 px-5">
       <div className="mx-auto w-full max-w-4xl">
         <div className="text-center mb-10">
           <p className="text-climb-green mb-2 text-xs font-bold uppercase tracking-wider">
