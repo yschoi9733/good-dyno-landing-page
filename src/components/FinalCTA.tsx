@@ -13,7 +13,7 @@ export function FinalCTA() {
   };
 
   return (
-    <section id="early-access" className="snap-start min-h-[calc(100svh-4rem)] flex flex-col justify-center py-16 px-5">
+    <section id="early-access" className="min-h-[calc(100svh-4rem)] flex flex-col justify-center py-16 px-5">
       <div className="mx-auto w-full max-w-2xl text-center">
 
         <div className="relative bg-surface shadow-soft rounded-3xl border border-line p-10 md:p-16 overflow-hidden">
@@ -80,7 +80,7 @@ export function FinalCTA() {
                   </button>
                 </div>
                 <p className="text-muted mt-4 text-sm">
-                  스팸 없이 출시 소식만 보내드려요. 언제든 구독 취소 가능합니다.
+                  스팸 없이 출시 소식만 보내드려요.
                 </p>
               </form>
             )}
