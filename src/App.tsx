@@ -1,3 +1,4 @@
+import { Nav } from "./components/Nav";
 import { Hero } from "./components/Hero";
 import { PainPoints } from "./components/PainPoints";
 import { CoreFlow } from "./components/CoreFlow";
@@ -7,14 +8,17 @@ import { FinalCTA } from "./components/FinalCTA";
 
 function App() {
   return (
-    <main className="h-svh snap-y snap-mandatory overflow-x-hidden overflow-y-auto scroll-smooth">
-      <Hero />
-      <PainPoints />
-      <CoreFlow />
-      <FeaturePreview />
-      <SocialProof />
-      <FinalCTA />
-    </main>
+    <>
+      <Nav />
+      <main className="h-svh overflow-x-hidden overflow-y-auto scroll-smooth snap-y snap-mandatory scroll-pt-16">
+        <Hero />
+        <PainPoints />
+        <CoreFlow />
+        <FeaturePreview />
+        <SocialProof />
+        <FinalCTA />
+      </main>
+    </>
   );
 }
 
