@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CheckCircle, ArrowRight, Send } from "lucide-react";
+import { CheckCircle, ArrowRight } from "lucide-react";
 
 export function FinalCTA() {
   const [email, setEmail] = useState("");
@@ -22,13 +22,6 @@ export function FinalCTA() {
           <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-climb-green/8 rounded-full" />
 
           <div className="relative">
-            {/* Icon */}
-            <div className="mb-8 flex justify-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-climb-green/10 border border-climb-green/30 text-climb-green">
-                <Send className="h-7 w-7" />
-              </div>
-            </div>
-
             {/* Logo */}
             <div className="mb-6 flex justify-center items-center gap-2">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-climb-green">
