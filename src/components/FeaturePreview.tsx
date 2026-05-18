@@ -183,15 +183,6 @@ export function FeaturePreview() {
           </div>
         </div>
 
-        <div className="mt-4 flex justify-center">
-          <div className="border-line bg-surface inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm">
-            <span className="relative flex h-2 w-2">
-              <span className="bg-climb-lime absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" />
-              <span className="bg-climb-lime relative inline-flex h-2 w-2 rounded-full" />
-            </span>
-            <span className="text-muted">개발 중인 기능입니다</span>
-          </div>
-        </div>
       </div>
     </section>
   );
