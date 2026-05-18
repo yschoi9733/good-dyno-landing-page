@@ -25,7 +25,7 @@ const surveyItems = [
 
 export function SocialProof() {
   return (
-    <section className="snap-start flex min-h-[calc(100svh-4rem)] flex-col items-center justify-center px-5 py-16">
+    <section className="flex min-h-[calc(100svh-4rem)] flex-col items-center justify-center px-5 py-16">
       <div className="mx-auto w-full max-w-5xl">
         <div className="bg-surface shadow-soft overflow-hidden rounded-3xl border border-line">
           <div className="bg-climb-green px-6 py-8 text-center text-white md:px-12 md:py-12">
@@ -35,9 +35,7 @@ export function SocialProof() {
               확인하고 있어요
             </h2>
             <p className="text-climb-lime/90 mx-auto max-w-xl text-lg">
-              자주 가는 암장과 영상 업로드 방식을 알려주시면
-              <br className="hidden sm:block" />
-              초기 서비스 설계에 반영할게요.
+              자주 가는 암장과 영상 업로드 방식을 알려주시면 초기 서비스 설계에 반영할게요.
             </p>
           </div>
 
@@ -62,7 +60,7 @@ export function SocialProof() {
             <button className="bg-climb-green hover:bg-climb-green/90 rounded-full px-8 py-3 font-semibold text-white transition-colors">
               설문 참여하기
             </button>
-            <p className="text-muted mt-3 text-sm">약 2분 정도 소요됩니다</p>
+            <p className="text-muted mt-3 text-sm">약 3분 정도 소요됩니다</p>
           </div>
         </div>
       </div>
