@@ -20,13 +20,13 @@ npm run dev
 
 ## 페이지 구성
 
-| 섹션 | 역할 |
-|------|------|
-| Hero | 서비스 소개 및 사전 신청 유도 |
-| PainPoints | 사용자가 겪는 문제 공감 |
-| CoreFlow | 서비스 동작 방식 3단계 설명 |
-| FeaturePreview | 주요 기능 및 AI 기능 예고 |
-| SocialProof | 유저 습관 설문 |
-| FinalCTA | 이메일 수집 |
+| 섹션           | 역할                          |
+| -------------- | ----------------------------- |
+| Hero           | 서비스 소개 및 사전 신청 유도 |
+| PainPoints     | 사용자가 겪는 문제 공감       |
+| CoreFlow       | 서비스 동작 방식 3단계 설명   |
+| FeaturePreview | 주요 기능 및 AI 기능 예고     |
+| SocialProof    | 유저 습관 설문                |
+| FinalCTA       | 이메일 수집                   |
 
 자세한 설계 내용은 [architecture.md](./architecture.md)를 참고하세요.
