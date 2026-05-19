@@ -182,7 +182,6 @@ export function FeaturePreview() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
