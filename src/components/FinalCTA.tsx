@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 export function FinalCTA() {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -21,8 +27,8 @@ export function FinalCTA() {
       });
       if (res.ok) {
         setIsSubmitted(true);
-        if ((window as any).gtag) {
-          (window as any).gtag('event', 'sign_up_success', {
+        if (window.gtag) {
+          window.gtag('event', 'sign_up_success', {
             event_category: 'engagement',
             event_label: 'Limbing 사전예약 알림신청',
           });
