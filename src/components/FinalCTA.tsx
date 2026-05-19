@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { CheckCircle, ArrowRight } from "lucide-react";
+import { useState } from 'react';
+import { CheckCircle, ArrowRight } from 'lucide-react';
 
 export function FinalCTA() {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -11,31 +11,52 @@ export function FinalCTA() {
     if (!email) return;
     setIsLoading(true);
     try {
-      const res = await fetch("https://formspree.io/f/mlgveqkl", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
+      const res = await fetch('https://formspree.io/f/mlgveqkl', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
         body: JSON.stringify({ email }),
       });
-      if (res.ok) setIsSubmitted(true);
+      if (res.ok) {
+        setIsSubmitted(true);
+        if ((window as any).gtag) {
+          (window as any).gtag('event', 'sign_up_success', {
+            event_category: 'engagement',
+            event_label: 'Limbing 사전예약 알림신청',
+          });
+        }
+      }
+    } catch (error) {
+      console.error('제출 중 오류 발생:', error);
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <section id="early-access" className="min-h-[calc(100svh-4rem)] flex flex-col justify-center py-16 px-5">
+    <section
+      id="early-access"
+      className="flex min-h-[calc(100svh-4rem)] flex-col justify-center px-5 py-16"
+    >
       <div className="mx-auto w-full max-w-2xl text-center">
-
-        <div className="relative bg-surface shadow-soft rounded-3xl border border-line p-10 md:p-16 overflow-hidden">
+        <div className="bg-surface shadow-soft border-line relative overflow-hidden rounded-3xl border p-10 md:p-16">
           {/* Decorative rings */}
-          <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-climb-green/10 rounded-full" />
-          <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-climb-green/8 rounded-full" />
+          <div className="border-climb-green/10 pointer-events-none absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full border" />
+          <div className="border-climb-green/8 pointer-events-none absolute top-1/2 left-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full border" />
 
           <div className="relative">
             {/* Logo */}
-            <div className="mb-6 flex justify-center items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-climb-green">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-climb-lime">
+            <div className="mb-6 flex items-center justify-center gap-2">
+              <div className="bg-climb-green flex h-10 w-10 items-center justify-center rounded-xl">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="text-climb-lime"
+                >
                   <path
                     d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
                     stroke="currentColor"
@@ -52,34 +73,37 @@ export function FinalCTA() {
               출시되면 가장 먼저 알려드릴게요
             </h2>
             <p className="text-muted mb-8 text-lg">
-              이메일을 남겨주시면 Limbing 출시 소식을 가장 먼저 받아보실 수 있어요.
+              이메일을 남겨주시면 Limbing 출시 소식을 가장 먼저 받아보실 수
+              있어요.
             </p>
 
             {isSubmitted ? (
-              <div className="bg-bg inline-flex items-center gap-3 rounded-2xl border border-climb-green/30 px-8 py-6">
+              <div className="bg-bg border-climb-green/30 inline-flex items-center gap-3 rounded-2xl border px-8 py-6">
                 <CheckCircle className="text-climb-green h-8 w-8" />
                 <div className="text-left">
                   <p className="font-semibold">신청이 완료되었어요!</p>
-                  <p className="text-muted text-sm">출시되면 가장 먼저 연락드릴게요.</p>
+                  <p className="text-muted text-sm">
+                    출시되면 가장 먼저 연락드릴게요.
+                  </p>
                 </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="mx-auto max-w-md">
-                <div className="bg-bg flex flex-col gap-3 rounded-2xl border border-line p-2 sm:flex-row sm:items-center">
+                <div className="bg-bg border-line flex flex-col gap-3 rounded-2xl border p-2 sm:flex-row sm:items-center">
                   <input
                     type="email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={e => setEmail(e.target.value)}
                     placeholder="이메일 주소를 입력하세요"
-                    className="text-ink placeholder:text-muted flex-1 rounded-xl bg-surface px-4 py-3 text-base outline-none transition-shadow focus:ring-2 focus:ring-climb-green/20"
+                    className="text-ink placeholder:text-muted bg-surface focus:ring-climb-green/20 flex-1 rounded-xl px-4 py-3 text-base transition-shadow outline-none focus:ring-2"
                     required
                   />
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="bg-climb-green hover:bg-climb-green/90 disabled:opacity-60 flex items-center justify-center gap-2 rounded-xl px-6 py-3 font-semibold text-white transition-colors"
+                    className="bg-climb-green hover:bg-climb-green/90 flex items-center justify-center gap-2 rounded-xl px-6 py-3 font-semibold text-white transition-colors disabled:opacity-60"
                   >
-                    {isLoading ? "신청 중..." : "사전 신청"}
+                    {isLoading ? '신청 중...' : '사전 신청'}
                     {!isLoading && <ArrowRight className="h-4 w-4" />}
                   </button>
                 </div>
@@ -92,7 +116,7 @@ export function FinalCTA() {
         </div>
 
         {/* Footer */}
-        <div className="text-muted mt-12 border-t border-line pt-8 text-sm">
+        <div className="text-muted border-line mt-12 border-t pt-8 text-sm">
           <p>Made with care by Good Dyno Team</p>
         </div>
       </div>
