@@ -2,11 +2,30 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-4E8Z4RNHMY"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-4E8Z4RNHMY');
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Limbing - 같은 문제를 푼 사람들의 클라이밍 영상을 한곳에</title>
-    <meta name="description" content="흩어진 클라이밍 영상을 암장, 난이도, 문제 기준으로 정리해 내 기록과 다른 사람의 풀이를 함께 볼 수 있게 해주는 서비스" />
-    <script>if (location.hash) history.replaceState(null, '', location.pathname);</script>
+    <meta
+      name="description"
+      content="흩어진 클라이밍 영상을 암장, 난이도, 문제 기준으로 정리해 내 기록과 다른 사람의 풀이를 함께 볼 수 있게 해주는 서비스"
+    />
+    <script>
+      if (location.hash) history.replaceState(null, '', location.pathname);
+    </script>
   </head>
   <body>
     <div id="root"></div>
