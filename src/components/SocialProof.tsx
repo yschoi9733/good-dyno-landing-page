@@ -25,32 +25,37 @@ const surveyItems = [
 
 export function SocialProof() {
   return (
-    <section className="flex min-h-[calc(100svh-4rem)] flex-col items-center justify-center px-5 py-16">
-      <div className="mx-auto w-full max-w-5xl">
-        <div className="bg-surface shadow-soft border-line overflow-hidden rounded-3xl border">
-          <div className="bg-climb-green px-6 py-8 text-center text-white md:px-12 md:py-12">
-            <h2 className="mb-4 text-2xl font-bold md:text-3xl">
-              지금 클라이머들의 영상 기록 습관을
-              <br />
-              확인하고 있어요
-            </h2>
-            <p className="text-climb-lime/90 mx-auto max-w-xl text-lg">
-              자주 가는 암장과 영상 업로드 방식을 알려주시면 초기 서비스 설계에
-              반영할게요.
-            </p>
-          </div>
+    <section className="bg-surface/30 flex min-h-[calc(100svh-4rem)] flex-col items-center justify-center px-6 py-16">
+      <div className="mx-auto w-full max-w-4xl">
+        {/* Header */}
+        <div className="mb-10 text-center">
+          <p className="text-muted mb-3 text-xs font-bold tracking-[0.2em] uppercase">
+            Climber Survey
+          </p>
+          <h2 className="text-3xl font-black tracking-tight md:text-4xl">
+            지금 클라이머들의{' '}
+            <span className="text-accent">영상 기록 습관</span>을<br />
+            확인하고 있어요
+          </h2>
+          <p className="text-muted mx-auto mt-4 max-w-lg text-base leading-relaxed">
+            자주 가는 암장과 영상 업로드 방식을 알려주시면
+            초기 서비스 설계에 반영할게요.
+          </p>
+        </div>
 
-          <div className="grid gap-4 p-6 md:grid-cols-2 md:p-8">
+        {/* Survey card */}
+        <div className="bg-card border-line overflow-hidden rounded-3xl border">
+          <div className="grid gap-3 p-6 md:grid-cols-2 md:p-8">
             {surveyItems.map((item, index) => (
               <div
                 key={index}
-                className="group border-line bg-bg hover:border-climb-green/30 hover:bg-climb-green/5 flex cursor-pointer items-center gap-4 rounded-xl border p-4 transition-all"
+                className="group border-line bg-surface hover:border-accent/40 hover:bg-accent/5 flex cursor-pointer items-center gap-4 rounded-2xl border p-5 transition-all"
               >
-                <div className="bg-climb-green/10 text-climb-green group-hover:bg-climb-green flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-colors group-hover:text-white">
+                <div className="bg-accent/10 text-accent group-hover:bg-accent flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-colors group-hover:text-white">
                   {item.icon}
                 </div>
                 <div>
-                  <h3 className="font-semibold">{item.title}</h3>
+                  <h3 className="font-bold">{item.title}</h3>
                   <p className="text-muted text-sm">{item.description}</p>
                 </div>
               </div>
@@ -62,7 +67,7 @@ export function SocialProof() {
               href="https://docs.google.com/forms/d/e/1FAIpQLSfhmF8J0a2n8Oo5UdUndkORE5u9cWKR8FGrW9S-01ks6hH_Pw/viewform?usp=dialog"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-climb-green hover:bg-climb-green/90 inline-block rounded-full px-8 py-3 font-semibold text-white transition-colors"
+              className="bg-accent hover:bg-accent/85 inline-block rounded-full px-8 py-3.5 font-bold text-white transition-colors"
             >
               설문 참여하기
             </a>
