@@ -17,7 +17,6 @@ coverage/
 .DS_Store
 
 .agents/
-.aidesigner/
 .claude/
 .mcp.json
 
