@@ -1,15 +1,18 @@
 import { useEffect } from 'react';
+import { ThemeProvider } from './context/ThemeContext';
 import { Nav } from './components/Nav';
 import { Hero } from './components/Hero';
 import { PainPoints } from './components/PainPoints';
 import { CoreFlow } from './components/CoreFlow';
 import { FeaturePreview } from './components/FeaturePreview';
+import { AIFeatures } from './components/AIFeatures';
 import { SocialProof } from './components/SocialProof';
 import { FinalCTA } from './components/FinalCTA';
 
 function App() {
   useEffect(() => {
     const mainEl = document.querySelector('main') as HTMLElement;
+    if (!mainEl) return;
     const sections = Array.from(mainEl.querySelectorAll('section')).slice(1);
     sections.forEach(el => el.classList.add('will-animate'));
 
@@ -47,17 +50,18 @@ function App() {
   }, []);
 
   return (
-    <>
+    <ThemeProvider>
       <Nav />
       <main>
         <Hero />
         <PainPoints />
         <CoreFlow />
         <FeaturePreview />
+        <AIFeatures />
         <SocialProof />
         <FinalCTA />
       </main>
-    </>
+    </ThemeProvider>
   );
 }
 
